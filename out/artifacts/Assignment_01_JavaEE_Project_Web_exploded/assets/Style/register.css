@@ -1,0 +1,141 @@
+/* Body reset */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* Main registration section */
+.reg-section {
+    display: flex;
+    justify-content: center; /* Centers the form horizontally */
+    align-items: center; /* Centers the form vertically */
+    height: 100vh; /* Full height of the viewport */
+    position: relative;
+    overflow: hidden; /* Ensures content does not overflow */
+}
+
+/* Fullscreen background image */
+.reg-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover; /* Ensures the image covers the whole background */
+    z-index: -1; /* Places the image behind the form */
+    filter: brightness(0.3); /* Adjusts brightness to make form stand out */
+}
+
+/* Form styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 23px;
+    max-width: 350px;
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(26, 26, 26, 0.9); /* Transparent dark background */
+    color: #fff;
+    z-index: 1; /* Ensures the form is above the image */
+}
+
+/* Title styling */
+.title {
+    font-size: 28px;
+    font-weight: 600;
+    text-align: center;
+    color: #00bfff;
+}
+
+/* Input field styling */
+.form label {
+    position: relative;
+}
+
+.form label .input {
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    padding: 20px 05px 05px 10px;
+    border: 1px solid rgba(105, 105, 105, 0.4);
+    border-radius: 10px;
+}
+
+.form label .input + span {
+    color: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    left: 10px;
+    top: 0;
+    font-size: 0.9em;
+    transition: 0.3s ease;
+}
+
+.form label .input:placeholder-shown + span {
+    top: 12.5px;
+    font-size: 0.9em;
+}
+
+.form label .input:focus + span,
+.form label .input:valid + span {
+    color: #00bfff;
+    top: 0;
+    font-size: 0.7em;
+    font-weight: 600;
+}
+
+/* Button styling */
+.submit {
+    border: none;
+    padding: 10px;
+    border-radius: 10px;
+    color: #fff;
+    font-size: 16px;
+    background-color: #00bfff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+    background-color: rgba(0, 191, 255, 0.7);
+}
+
+/* Text messages */
+.message,
+.signin {
+    font-size: 14.5px;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.signin {
+    text-align: center;
+}
+
+.signin a {
+    color: #00bfff;
+    text-decoration: none;
+}
+
+.signin a:hover {
+    text-decoration: underline;
+}
+
+/* Flex styling for name inputs */
+.flex {
+    display: flex;
+    width: 100%;
+    gap: 6px;
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(0.9);
+        opacity: 1;
+    }
+
+    to {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+}

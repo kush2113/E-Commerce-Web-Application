@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Assignment-01-JavaEE_Project:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Assignment_01_JavaEE_Project_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Assignment-01-JavaEE_Project/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Assignment-01-JavaEE_Project" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.19.4" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.29" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
