@@ -112,21 +112,21 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link active"  href="user.jsp">User</a>
+                    <a class="nav-link active"  href="adduser">User</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="product.jsp">Products</a>
+                    <a class="nav-link" href="addProduct">Products</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Reports</a>
+                    <a class="nav-link" href="addCategory">Category</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
-                </li>
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link" href="#">Settings</a>--%>
+<%--                </li>--%>
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
+                    <a class="nav-link" href="index.jsp">Logout</a>
                 </li>
             </ul>
         </div>

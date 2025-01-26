@@ -1,5 +1,6 @@
 package lk.ijse.assignment01javaee_project.controller.ProductController;
 
+import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.MultipartConfig;
 import jakarta.servlet.annotation.WebServlet;
@@ -7,6 +8,7 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.Part;
+import lk.ijse.assignment01javaee_project.Entity.Category;
 import lk.ijse.assignment01javaee_project.Entity.Product;
 
 import java.io.File;
@@ -30,7 +32,7 @@ public class AddProductServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         String productName = req.getParameter("productName");
-        int categoryID = Integer.parseInt(req.getParameter("categoryId"));
+        int categoryID = Integer.parseInt(req.getParameter("productCategory"));
         String description = req.getParameter("description");
         String qty = req.getParameter("quantity");
         String unitPrice = req.getParameter("unitPrice");
@@ -84,11 +86,7 @@ public class AddProductServlet extends HttpServlet {
         } catch (Exception e) {
             e.printStackTrace();
             resp.sendRedirect("product.jsp?massage=Product Not Saved");
-
         }
-
-
-
     }
 
     @Override

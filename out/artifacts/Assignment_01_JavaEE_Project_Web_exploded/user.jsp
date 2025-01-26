@@ -40,38 +40,37 @@
     </style>
 </head>
 <body>
-
 <header>
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Admin Panel</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link active"  href="user.jsp">User</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="product.jsp">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Reports</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Settings</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Logout</a>
-                </li>
-            </ul>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Admin Panel</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav me-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active"  href="adduser">User</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="addProduct">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"  href="addCategory">Category</a>
+                    </li>
+                    <%--                    <li class="nav-item"><a class="nav-link" href="#">Settings</a>--%>
+                    <%--                    </li>--%>
+                </ul>
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.jsp">Logout</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-</nav>
+    </nav>
 </header>
+
 
 <!-- User Management Table -->
 <div class="container table-wrapper">
@@ -82,7 +81,6 @@
         </button>
     </div>
 
-    <a href="adduser">load</a>
 
     <table class="table table-bordered table-striped" >
         <thead class="table-dark" >
@@ -169,7 +167,8 @@
                             <option value="User">User</option>
                         </select>
                     </div>
-                    <button type="submit" class="btn btn-primary">Save User</button>
+
+                    <button type="submit" class="btn btn-primary" href="adduser" >Save User</button>
                 </form>
             </div>
         </div>

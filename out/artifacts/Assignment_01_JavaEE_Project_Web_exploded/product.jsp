@@ -1,5 +1,6 @@
 <%@ page import="java.util.List" %>
 <%@ page import="lk.ijse.assignment01javaee_project.Entity.Product" %>
+<%@ page import="lk.ijse.assignment01javaee_project.Entity.Category" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -139,21 +140,20 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto">
                     <li class="nav-item">
-                        <a class="nav-link active"  href="user.jsp">User</a>
+                        <a class="nav-link active"  href="adduser">User</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="product.jsp">Products</a>
+                        <a class="nav-link" href="addProduct">Products</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Reports</a>
+                        <a class="nav-link"  href="addCategory">Category</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Settings</a>
-                    </li>
+<%--                    <li class="nav-item"><a class="nav-link" href="#">Settings</a>--%>
+<%--                    </li>--%>
                 </ul>
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Logout</a>
+                        <a class="nav-link" href="index.jsp">Logout</a>
                     </li>
                 </ul>
             </div>
@@ -163,31 +163,56 @@
 
 
 
-
 <%-- Product Section --%>
 <section id="product_section">
+
+
     <div class="container mt-3" style="background-color: #f8f9fa">
         <h2 class="text-center mb-3">Product Management</h2>
         <div class="row justify-content-center">
             <div class="col-lg-8 col-md-10 col-sm-12">
                 <form class="form mb-3" id="productForm" action="addProduct" method="post" enctype="multipart/form-data">
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <input type="text" name="productName" class="form-control" placeholder="Enter product name" required>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col-md-6">
+                                <input type="number" name="unitPrice" class="form-control" placeholder="Enter unit price" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" name="description" class="form-control" placeholder="Enter product description" required>
+                            </div>
+                        </div>
                     <div class="row mb-2">
-                        <div class="col-md-6">
-                            <input type="text" name="productName" class="form-control" placeholder="Enter product name" required>
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-md-6">
-                            <input type="number" name="unitPrice" class="form-control" placeholder="Enter unit price" required>
-                        </div>
-                        <div class="col-md-6">
-                            <input type="text" name="description" class="form-control" placeholder="Enter product description" required>
-                        </div>
-                    </div>
-                    <div class="row mb-2">
-                        <div class="col-md-4">
-                            <input type="number" name="categoryId" class="form-control" placeholder="Category ID" required>
-                        </div>
+<%--                        <div class="col-md-4">--%>
+<%--                            <input type="number" name="categoryId" class="form-control" placeholder="Category ID" required>--%>
+<%--                        </div>--%>
+
+                          <a href="loadCategories">loadCategory</a>
+                        <select class="form-select" id="" name="productCategory" required>
+                            <option id="editProductCategory" selected></option>
+
+                            <%
+                                List<Category> categories = (List<Category>) request.getAttribute("categories");
+
+                                if (categories != null && !categories.isEmpty()) {
+                                    for (Category category : categories) {
+                                        System.out.println("CategoryID: " + category.getCategoryId() + "   " + "Category: " + category.getCategoryName());
+                            %>
+                            <option value="">select category</option>
+                            <option value="<%= category.getCategoryId() %>"><%= category.getCategoryName() %></option>
+                            <%
+                                }
+                            } else {
+                            %>
+                            <option value="">No categories available</option>
+                            <%
+                                }
+                            %>
+                        </select>
+
                         <div class="col-md-4">
                             <input type="number" name="quantity" class="form-control" placeholder="Quantity on hand" required>
                         </div>
@@ -205,8 +230,11 @@
 
 
 
+
+
+
         <div class="table-responsive mt-3">
-            <a href="addProduct">load</a>
+<%--            <a href="addProduct">load</a>--%>
 
             <table class="table table-sm table-bordered table-striped">
                 <thead>

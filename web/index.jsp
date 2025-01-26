@@ -92,8 +92,8 @@
         }
 
         .ttt {
-            height: 92px;
-            width: 147px;
+            height: 50px;
+            width: 94px;
         }
 
     </style>
